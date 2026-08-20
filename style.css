@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fff3b0, #a8e6ff);
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.game-container h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.game-container p {
+    font-size: 22px;
+}
+
+#question {
+    font-size: 90px;
+    font-weight: bold;
+    margin: 25px 0;
+    color: #ff6b6b;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.options button {
+    padding: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+    background: #4dabf7;
+    color: white;
+    transition: 0.2s;
+}
+
+.options button:hover {
+    transform: scale(1.05);
+    background: #339af0;
+}
+
+.options button:active {
+    transform: scale(0.95);
+}
+
+#result {
+    min-height: 50px;
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#score {
+    font-weight: bold;
+    color: #ff922b;
+}
+.correct-answer {
+    background: #2ecc71 !important;
+    transform: scale(1.08);
+}
+
+.wrong-answer {
+    background: #ff4757 !important;
+    animation: shake 0.4s;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-8px);
+    }
+
+    50% {
+        transform: translateX(8px);
+    }
+
+    75% {
+        transform: translateX(-8px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 18px;
+    top: -20px;
+    animation: fall 1.8s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+.start-screen {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    padding: 40px 30px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.start-screen h1 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.start-screen p {
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+#start-btn {
+    padding: 18px 35px;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+    background: #2ecc71;
+    color: white;
+    transition: 0.2s;
+}
+
+#start-btn:hover {
+    transform: scale(1.05);
+}
+
+#start-btn:active {
+    transform: scale(0.95);
+}
+.game-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.game-actions button {
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+#home-btn {
+    background: #ffa502;
+    color: white;
+}
+
+#restart-btn {
+    background: #6c5ce7;
+    color: white;
+}
+
+.game-actions button:hover {
+    transform: scale(1.05);
+}
+.language-switch {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.language-switch button {
+    padding: 8px 16px;
+    border: 2px solid #4dabf7;
+    border-radius: 20px;
+    background: white;
+    color: #4dabf7;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.language-switch button:hover {
+    transform: scale(1.05);
+}
+
+.language-switch .active-language {
+    background: #4dabf7;
+    color: white;
+}
+.options button:disabled {
+    cursor: not-allowed;
+    opacity: 0.85;
+}
+.mode-select {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.mode-select button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #e9ecef;
+}
+
+.mode-select button:hover {
+    transform: scale(1.05);
+}
+
+.mode-select .active-mode {
+    background: #4dabf7;
+    color: white;
+}
+.level-select {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.level-select p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.level-select button {
+    padding: 10px 14px;
+    margin: 5px;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #e9ecef;
+}
+
+.level-select button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.level-select .active-level {
+    background: #2ecc71;
+    color: white;
+}
+
+
+/* LEVEL POPUP */
+
+.level-popup {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2000;
+}
+
+.level-popup-box {
+    background: white;
+
+    width: 90%;
+    max-width: 420px;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+}
+
+.level-popup-box h2 {
+    font-size: 30px;
+}
+
+.level-popup-box p {
+    font-size: 19px;
+    line-height: 1.5;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    margin-top: 20px;
+}
+
+.popup-buttons button {
+    padding: 13px 18px;
+
+    border: none;
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+.repeat-voice-btn {
+    margin: 12px 0 18px;
+    padding: 9px 18px;
+
+    border: none;
+    border-radius: 20px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    background: #f1f3f5;
+
+    transition: 0.2s;
+}
+
+.repeat-voice-btn:hover {
+    transform: scale(1.05);
+}
+
+.repeat-voice-btn:active {
+    transform: scale(0.95);
+}
+
+#next-level-btn {
+    background: #2ecc71;
+    color: white;
+}
+
+#repeat-level-btn {
+    background: #4dabf7;
+    color: white;
+}
+body.bangla-mode {
+    font-family: "Baloo Da 2", sans-serif;
+}
