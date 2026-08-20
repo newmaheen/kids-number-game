@@ -6,8 +6,11 @@ The game currently supports both **English and Bangla**. I also added Bangla voi
 
 ## 📸 Screenshot
 
-![Kids Number Game](screenshots/game-screenshot.png)
+### Home Screen
+![Kids Number Game Home](screenshots/home-screenshot.PNG)
 
+### Game Screen
+![Kids Number Game](screenshots/game-screenshot.PNG)
 ## What can you do in the game?
 
 There are currently three game modes:
