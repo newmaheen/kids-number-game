@@ -8,7 +8,7 @@ The game currently supports both **English and Bangla**. I also added Bangla voi
 
 ### Home Screen
 
-![Kids Number Game Home](screenshots/home-screenshot.PNG)
+![Kids Number Game Home](screenshots/home.PNG)
 
 ### Game Screen
 
